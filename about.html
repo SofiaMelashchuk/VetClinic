@@ -31,33 +31,5 @@
   Your browser does not support the video tag.
 </video>
 
-<h1>Create Appointment</h1>
-<form action="/submit-appointment" method="post">
-  <label for="name">Name:</label>
-  <input type="text" id="name" name="name" placeholder="Enter your name" required><br><br>
-
-  <label for="pet">Pet:</label>
-  <input type="text" id="pet" name="pet" placeholder="Enter your pet's name" required><br><br>
-
-  <label for="problem">Problem Description:</label><br>
-  <textarea id="problem" name="problem" placeholder="Describe your pet's issue" rows="4" cols="50" required></textarea><br><br>
-
-  <label for="service">Service Type:</label>
-  <select id="service" name="service" required>
-    <option value="" disabled selected>Select service</option>
-    <option value="checkup">Check-up</option>
-    <option value="vaccination">Vaccination</option>
-    <option value="surgery">Surgery</option>
-  </select><br><br>
-
-  <label for="phone">Phone Number:</label>
-  <input type="tel" id="phone" name="phone" pattern="^\+380\d{3}\d{2}\d{2}\d{2}$" placeholder="+380XXXXXXXXX" required><br><br>
-
-  <label for="appointment-date">Date and Time of Appointment:</label>
-  <input type="datetime-local" id="appointment-date" name="appointment-date" required><br><br>
-
-  <input type="submit" value="Create Appointment">
-</form>
-
 </body>
 </html>
