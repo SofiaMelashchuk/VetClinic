@@ -1,0 +1,14 @@
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
+
+# Ignore common editor and IDE temporary files
+*.swp
+*.swo
+*.swn
+*~
+*.bak
+*.tmp
+*.sublime*
+.vscode/
+.idea/

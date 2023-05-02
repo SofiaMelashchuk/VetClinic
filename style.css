@@ -1,0 +1,183 @@
+body {
+  background-color: #92e3d9;
+  background-attachment: fixed;
+  background-size: cover;
+}
+h1 {
+  font-family: "Cour", sans-serif;
+  font-size: 300%;
+  text-align: center;
+  display: block;
+}
+header {
+  font-family: "Modern", sans-serif;
+  font-size: 100%;
+  text-align: center;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+nav ul li {
+  display: inline-block;
+  float: left;
+  margin-right: 20px;
+  text-align: center;
+}
+nav ul li a {
+  color: #333;
+  display: block;
+  font-size: 16px;
+  padding: 20px;
+  text-decoration: none;
+}
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    object-fit: contain;
+    margin: 0 2px;
+}
+.text-container {
+  float: start;
+  max-width: 100%;
+}
+
+.procedure-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+p {
+  font-family: "Cour", sans-serif;
+  font-size: 130%;
+  text-align: center;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+table, th, td {
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+		th, td {
+			padding: 5px;
+			text-align: left;
+			font-family: "Modern", sans-serif;
+            font-size: 100%;
+		}
+		th {
+			background-color: #6eaaa3;
+			color: white;
+        }
+video {
+    display: block;
+    margin: 0 auto;
+}
+video:hover {
+	transform: scale(1.3);
+}
+
+form {
+  width: 700px;
+  margin: 0 auto;
+  padding-bottom: 100px;
+  font-family: "Cour", sans-serif;
+}
+
+label {
+  font-size: 18px;
+  font-family: "Cour", sans-serif;
+  font-weight: bolder;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border: 1px solid #000;
+  border-radius: 4px;
+  background-color: transparent;
+  color: #000;
+  font-size: 18px;
+  font-family: "Cour", sans-serif;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #000;
+  opacity: 1;
+}
+
+input[type="submit"] {
+  width: auto;
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+  font-family: "Cour", sans-serif;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.tooltip {
+  position: relative;
+}
+
+.tooltip .tooltip-text {
+  visibility: hidden;
+  width: 400px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -200px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+@font-face {
+  font-family: 'Cour';
+  src: url(fonts/cour.ttf);
+}
+@font-face {
+  font-family: 'Bauhs93';
+  src: url(fonts/bauhs93.ttf);
+}
+@font-face {
+  font-family: 'Modern';
+  src: url(fonts/modern.ttf);
+}
+
