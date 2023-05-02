@@ -12,7 +12,7 @@
 <header>
   <nav>
     <ul>
-      <li><a id="mainpage" href="main.html">ГОЛОВНА</a></li>
+      <li><a id="mainpage" href="/">ГОЛОВНА</a></li>
       <li><a id="appointmentpage" href="appointment.html">ЗАПИС НА ПРИЙОМ</a></li>
       <li><a id="servicespage" href="services.html">ПОСЛУГИ</a></li>
       <li><a id="aboutpage" href="about.html">ПРО НАС</a></li>
@@ -27,7 +27,7 @@
     Не соромтеся зв'язатися з нами, якщо у вас є будь-які питання або потреби
     в наших послугах.</p>
 </div>
-<form action="/submit-appointment" method="post">
+<form action="/submit-appointment.php" method="post">
   <label for="name">ПІБ:</label>
   <input type="text" id="name" name="name" placeholder="Введіть ПІБ" required><br><br>
 
@@ -37,7 +37,7 @@
     <option value="choice1">Cсавець</option>
     <option value="choice2">Птах</option>
     <option value="choice3">Рептилія</option>
-    <option value="choice4">Земноводна</option>>
+    <option value="choice4">Земноводна</option>
   </select><br><br>
 
   <label for="problem">Опис проблеми:</label><br>
