@@ -10,10 +10,7 @@
 <header>
     <nav>
         <ul>
-            <li><a id="mainpage" href="main.html">ГОЛОВНА</a></li>
-            <li><a id="appointmentpage" href="appointment.html">ЗАПИС НА ПРИЙОМ</a></li>
-            <li><a id="servicespage" href="services.html">ПОСЛУГИ</a></li>
-            <li><a id="aboutpage" href="about.html">ПРО НАС</a></li>
+            <?php require_once('parts/menu.php') ?>
         </ul>
     </nav>
 </header>

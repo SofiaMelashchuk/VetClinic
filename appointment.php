@@ -1,3 +1,18 @@
+<?php
+	require_once('db.php');
+	
+	// Query the database
+$sql = 'SELECT DATE(appointment_date) AS date FROM appointments';
+$result = $conn->query($sql);
+$conn->close();
+
+$service = '';
+if (isset($_GET['service'])) {
+	$service = $_GET['service'];
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,17 +20,14 @@
   <title>Veterinary clinic</title>
   <script src="functions.js"></script>
   <link rel="stylesheet" type = "text/css" href="style.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"> <!-- Add Flatpickr CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </head>
 <body>
 <header>
   <nav>
     <ul>
-      <li><a id="mainpage" href="/">ГОЛОВНА</a></li>
-      <li><a id="appointmentpage" href="appointment.html">ЗАПИС НА ПРИЙОМ</a></li>
-      <li><a id="servicespage" href="services.html">ПОСЛУГИ</a></li>
-      <li><a id="aboutpage" href="about.html">ПРО НАС</a></li>
+      <?php require_once('parts/menu.php') ?>
     </ul>
   </nav>
 </header>
@@ -45,12 +57,12 @@
 
   <label for="service">Послуга:</label>
   <select id="service" name="service" required>
-    <option value="" disabled selected>Оберіть послугу</option>
-    <option value="choice1">Огляд тварини</option>
-    <option value="choice2">Вакцинація</option>
-    <option value="choice3">Стерилізація/Кастрація</option>
-    <option value="choice4">Лікування захворювань</option>
-    <option value="choice5">Рентген</option>
+    <option value="" disabled>Оберіть послугу</option>
+    <option <?php echo ($service == 'choice1') ? 'selected' : ''; ?> value="choice1">Огляд тварини</option>
+    <option <?php echo ($service == 'choice2') ? 'selected' : ''; ?> value="choice2">Вакцинація</option>
+    <option <?php echo ($service == 'choice3') ? 'selected' : ''; ?> value="choice3">Стерилізація/Кастрація</option>
+    <option <?php echo ($service == 'choice4') ? 'selected' : ''; ?> value="choice4">Лікування захворювань</option>
+    <option <?php echo ($service == 'choice5') ? 'selected' : ''; ?> value="choice5">Рентген</option>
   </select><br><br>
 
   <label for="phone">Номер телефону:</label>
@@ -59,15 +71,26 @@
   <label for="appointment-date">Дата та час запису:</label>
   <input type="text" id="appointment-date" name="appointment-date" placeholder="Оберіть дату та час" required>
 
-  <input type="submit" value="Записатись на прийом">
+  <button type="submit">Записатись на прийом</button>
 </form>
-</body>
-</html>
+
 <script>
   flatpickr("#appointment-date", {
     enableTime: true,
     dateFormat: "Y-m-d H:i",
     time_24hr: true,
     minDate: new Date(),
+    disable: [
+        <?php
+	if ($result->num_rows > 0) {
+		while($row = $result->fetch_assoc()) {
+			echo "'" . $row['date'] . "',";
+		}
+	}
+
+?>
+	],
   });
 </script>
+</body>
+</html>
