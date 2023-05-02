@@ -168,6 +168,59 @@ input[type="submit"]:hover {
   opacity: 1;
 }
 
+.carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  width: 80%;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f8f8f8;
+}
+
+.carousel-slide {
+  display: none;
+  justify-content: center;
+  width: 80%;
+  margin-left: 10%;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.carousel-slide.active {
+  display: block;
+}
+
+.review {
+  font-size: 18px;
+  color: #333;
+}
+
+.carousel-button {
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.carousel-button.prev {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel-button.next {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 @font-face {
   font-family: 'Cour';
   src: url(fonts/cour.ttf);
